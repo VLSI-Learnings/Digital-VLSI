@@ -68,24 +68,9 @@ HDL is a specialized computer language used to describe the structure and behavi
 **Keywords:**
 
 * These are predefined identifiers which has specific meaning and used in certain context.
-  * initial
-  * always
-  * begin
-  * case
-  * deassign
-  * and
-  * or
-  * xor
-  * buf
-  * casex
-  * default
-  * assign
-  * bufifo
-  * casez
-  * defparam
-  * bufifl
-  * cmos
-  * disable
+  * initial, always, begin, case, assign, and, or, xor
+  * buf, casex, default, assign, bufif0, casez
+  * defparam, bufif1, cmos, disable, etc
 **Note that only lowercase are keywords**
 
 **Comments:**
@@ -154,20 +139,99 @@ HDL is a specialized computer language used to describe the structure and behavi
     `endif
     ```
 
-    During the compilation, if the text macro signal is defined the corresponding statement executes, and `else is optional
-  * `default_nettype
-  * `include
-  * `resetall
-  * `timescale
+    During the compilation, if the text macro signal is defined the corresponding statement executes, and `else is optional.
+  * `default_nettype - This is used to specify the **net** type for implicit net declarations.
+
+    ```verilog
+    `default_nettype wand
+    ```
+
+  * `include - This directive is used to replace the contents of the file in line
+
+    ```verilog
+    `include "full_path_of_file"
+    ```
+
+  * `resetall - This directive resets all the compiler directives to default. Exanple: causes net type to be wire.
+
+    ```verilog
+    `resetall
+    ```
+
+  * `timescale - The association of time units is done using this directive, specifies the time units and and time precision.
+
+    ```verilog
+    `timescale timeunit/time_precision
+    `timescale 10ns/10ps
+    ```
+
+    If every is having its own timescale then the least precision is taken into account.
+
   * `unconnected_drive
-  * `nounconnected_drive
+  * `nounconnected_drive - All unconnected input ports that appear between these directives are connected to 0 or 1.
+
+    ```verilog
+    `unconnected_drive pull1
+    `nounconnected_drive
+    ```
+
   * `celldefine
-  * `endcelldefine
+  * `endcelldefine - These will mark the module as cell module(these modules are used by PLI routines for timing analysis etc).
+
+    ```verilog
+    `celldefine
+    module FD1S3AX {D, CK, Z) ;
+    endmodule
+    `endcelldefine
+    ```
+
+**Vaule Set:**
+
+* The 4 basic values in Verilog HDL are
+  * 0 :logic-0orfalse
+  * 1: logic-1 or true
+  * x: unknown
+  * z: high-impedance
+* x and z are case insensitive.
+* Constants are 3 types
+  * Integer - represented in two formats
+    * Simple decimal
+      * 30, -15
+    * Base format
+      * [size]'base value
+      ex: 4'b0101
+      * Not legal formats
+        * Space between ' character and base
+        * Size can't be expression - (2+1)'b00000
+        * value can't be negative
+  * Real
+    * Decimal format
+      * 1.5, 2,670
+    * Scientific format
+      * 14_3.1e2 (=14310)(underscore is ignored)
+      * 4e-2 (0.04)
+  * string - A sequence of characters within the double quotes.
+
+    ```verilog
+    message = "Internal Error";
+    reg [8*14:0] message;
+    ```
 
 **Data Types:**
 
-* Net -
-* Reg -
+* **Net**
+  * Represents the physical connection between the elements.
+  * If no driver is connected to net, default value is z.
+  * wire, tri, wor, trior, wand, triand, trireg, tril, tri0, supply0, supply 1
+  Syntax
+
+    ```verilog
+    net_type [msb:lsb] var
+    ```
+
+  * wire and tri are similar types but tri is used when multiple drivers drive a net.
+
+* **Reg** -
 
 ## Chapter 3
 
