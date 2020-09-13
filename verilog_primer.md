@@ -1,8 +1,8 @@
 # Verilog HDL Primer by J B
 
-* [Y's](https://github.com/VLSI-Learnings/Digital-VLSI/blob/master/verilog_primer.md#definitions)
+* [Y's](https://github.com/VLSI-Learnings/Digital-VLSI/blob/master/verilog_primer.md#ys)
 * [Chapter 1](https://github.com/VLSI-Learnings/Digital-VLSI/blob/master/verilog_primer.md#chapter-1) - Introduction
-* [Chapter 2](https://github.com/VLSI-Learnings/Digital-VLSI/blob/master/verilog_primer.md#chapter-2) - Syntax
+* [Chapter 2](https://github.com/VLSI-Learnings/Digital-VLSI/blob/master/verilog_primer.md#chapter-2) - Elements & Syntax
 * [Chapter 3](https://github.com/VLSI-Learnings/Digital-VLSI/blob/master/verilog_primer.md#chapter-3) - Modelling
 
 ## Y's
@@ -25,6 +25,7 @@ HDL is a specialized computer language used to describe the structure and behavi
 
 * Verilog HDL is a hardware description language that can be used to model a digital systema many levels of abstraction ranging from the algorithmic level to the gate-level to the switch-level.
 * The Verilog HDL language was first developed by Gateway Design Automation(acquired by Cadence Design Systems) in 1983.
+**Verilog is case-sensitive**
 
 **Capabilities:**
 
@@ -35,7 +36,8 @@ HDL is a specialized computer language used to describe the structure and behavi
 5. Notion of concurrency and time can be explicitly modeled.
 6. The language is non-deterministic under certain situations,that is, a model may produce different resultson different simulators; for example, the ordering of events on an event queue is not defined by the standard.
 7. Explicit language constructs are provided for specifyingpin-topin delays, path delays and timing checks of a design.
-8. The capabilities of the Verilog HDL language can be further extended by using the programming language interface (PLI) mechanism. **PLI is a collection of routines that allow foreign functions to access information within a Verilog module and allows for designer interaction with the simulator.**
+8. The capabilities of the Verilog HDL language can be further extended by using the programming language interface (PLI) mechanism.
+**PLI is a collection of routines that allow foreign functions to access information within a Verilog module and allows for designer interaction with the simulator.**
 
 ## Chapter 2
 
@@ -58,6 +60,109 @@ HDL is a specialized computer language used to describe the structure and behavi
     .
     endmodule
   ```
+
+**Identifiers:**
+
+* An identifier in Verilog HDL is any sequence of letters,digits,the $ character, and the _ (underscore) character, with the restriction that the first character must be a letter or an underscore.
+
+**Keywords:**
+
+* These are predefined identifiers which has specific meaning and used in certain context.
+  * initial
+  * always
+  * begin
+  * case
+  * deassign
+  * and
+  * or
+  * xor
+  * buf
+  * casex
+  * default
+  * assign
+  * bufifo
+  * casez
+  * defparam
+  * bufifl
+  * cmos
+  * disable
+**Note that only lowercase are keywords**
+
+**Comments:**
+
+* In verilog we can comment the description in two ways.
+  * Multiple lines
+
+    ```verilog
+    /*
+    Description
+    */
+    ```
+
+  * Single line
+
+    ```verilog
+    //Description
+    //Description
+    ```
+
+**Format:** Verilog is free format, statements can be written in a single line or multiple lines.
+
+**Task:**
+
+* Task is a reusable code that can be invoked from different parts of the design.
+* A task can return zero or more values and can allows delays(mostly used in test benches).
+
+**Function:**
+
+* Function is like task but returns only one value.
+* This executes at zero time and doesn't allow delays.
+  
+**System Task and Functions:** - An identifier starting with **$** character is system task of function.
+
+  ```verilog
+  $display, $monitor
+  ```
+
+**Compiler Directives:**
+
+* Identifiers that start with `(backquote) and when compiled, has its effect throughout the compilation process, until a different compiler directive specifies otherwise.
+  * `define - Used for text substitution.
+
+    ```verilog
+    `define MAX_BUS_SIZE 32
+    reg [`MAX_BUS_SIZE - 1:0] var;
+    ```
+
+  * `undef - Removes the previously defined.
+
+    ```verilog
+    `define WORD 16
+    wire [`WORD : 1] var;
+    `undef WORD
+    ```
+
+  * `ifdef,
+  * `else,
+  * `endif - These directives are used in conditional compilation.
+
+    ```verilog
+    `ifdef signal
+    parameter WORD_SIZE =16;
+    `else
+    parameter WORD_SIZE =32;
+    `endif
+    ```
+
+    During the compilation, if the text macro signal is defined the corresponding statement executes, and `else is optional
+  * `default_nettype
+  * `include
+  * `resetall
+  * `timescale
+  * `unconnected_drive
+  * `nounconnected_drive
+  * `celldefine
+  * `endcelldefine
 
 **Data Types:**
 
@@ -142,3 +247,7 @@ A design can be modeled in three different styles or in a mixed style. These sty
 
 * **Mixed style**
   * The design is made using of all the above styles.
+
+Simulating a Design
+
+* Verilog HDL provides capabilities not only to escribe a design but also to model stimulus, control, storing responses and verification, all using the same language. Stimulus and control can be generated using initial statements.
