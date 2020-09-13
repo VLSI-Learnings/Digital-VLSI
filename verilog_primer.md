@@ -230,8 +230,27 @@ HDL is a specialized computer language used to describe the structure and behavi
     ```
 
   * wire and tri are similar types but tri is used when multiple drivers drive a net.
-  * |as|s|u|r|e|
-  * |sd|ds|ds||
+
+    |wire(or tri)|0|1|x|z|
+    |:----:|----|----|----|----|
+    |0|0|x|x|0|
+    |1|x|1|x|1|
+    |x|x|x|x|x|
+    |z|0|1|x|z|
+  * wor and trior
+    |wor(or trior)|0|1|x|z|
+    |:-:|-|-|-|-|
+    |0|0|1|x|0|
+    |1|1|1|1|1|
+    |x|x|1|x|x|
+    |z|0|1|x|z|
+  * wand and triand
+    |wand(or triand)|0|1|x|z|
+    |:-:|-|-|-|-|
+    |0|0|0|0|0|
+    |1|0|1|x|1|
+    |x|0|x|x|x|
+    |z|0|1|x|z|
 
 * **Reg** -
 
