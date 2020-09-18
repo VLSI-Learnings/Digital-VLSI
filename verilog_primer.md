@@ -83,6 +83,7 @@ HDL is a specialized computer language used to describe the structure and behavi
     Description
     */
     ```
+
   * Single line
 
     ```verilog
@@ -117,6 +118,7 @@ $display, $monitor
     `define MAX_BUS_SIZE 32
     reg [`MAX_BUS_SIZE - 1:0] var;
     ```
+
   * `undef - Removes the previously defined.
 
     ```verilog
@@ -124,6 +126,7 @@ $display, $monitor
     wire [`WORD : 1] var;
     `undef WORD
     ```
+
   * `ifdef,
   * `else,
   * `endif - These directives are used in conditional compilation.
@@ -136,30 +139,31 @@ $display, $monitor
     `endif
     ```
 
-
     During the compilation, if the text macro signal is defined the corresponding statement executes, and `else is optional.
   * `default_nettype - This is used to specify the **net** type for implicit net declarations.
 
     ```verilog
     `default_nettype wand
     ```
+
   * `include - This directive is used to replace the contents of the file in line
 
     ```verilog
     `include "full_path_of_file"
     ```
+
   * `resetall - This directive resets all the compiler directives to default. Exanple: causes net type to be wire.
 
     ```verilog
     `resetall
     ```
+
   * `timescale - The association of time units is done using this directive, specifies the time units and and time precision.
 
     ```verilog
     `timescale timeunit/time_precision
     `timescale 10ns/10ps
     ```
-
 
     If every is having its own timescale then the least precision is taken into account.
   * `unconnected_drive
@@ -169,6 +173,7 @@ $display, $monitor
     `unconnected_drive pull1
     `nounconnected_drive
     ```
+
   * `celldefine
   * `endcelldefine - These will mark the module as cell module(these modules are used by PLI routines for timing analysis etc).
 
@@ -224,8 +229,8 @@ $display, $monitor
     ```verilog
     net_type [msb:lsb] var
     ```
-  * wire and tri are similar types but tri is used when multiple drivers drive a net.
 
+  * wire and tri are similar types but tri is used when multiple drivers drive a net.
 
     | wire(or tri) | 0 | 1 | x | z |
     | :-: | - | - | - | - |
@@ -235,7 +240,6 @@ $display, $monitor
     | z | 0 | 1 | x | z |
   * wor and trior
 
-
     | wor(or trior) | 0 | 1 | x | z |
     | :-: | - | - | - | - |
     | 0 | 0 | 1 | x | 0 |
@@ -243,7 +247,6 @@ $display, $monitor
     | x | x | 1 | x | x |
     | z | 0 | 1 | x | z |
   * wand and triand
-
 
     | wand(or triand) | 0 | 1 | x | z |
     | :-: | - | - | - | - |
@@ -278,6 +281,7 @@ $display, $monitor
   ```verilog
   assign #10 a=b^c;
   ```
+
 * Intradelay - The time by which the assignment of the RHS to the LHS is delayed.
 
   ```verilog
@@ -295,23 +299,26 @@ A design can be modeled in three different styles or in a mixed style. These sty
     ```text
     assign [delay] LHS=RHS;
     ```
+
 * **Behavioral style**
   * Design is modelled using procedural assignments.
   * This has two statements.
     * Initial statement - Executes only once.
 
-      ```verilog
-      initial begin
+        ```verilog
+        initial begin
         clk=1'b0;
-      end
-      ```
+        end
+        ```
+
     * Always statement - Executes in a loop based on the sensitivity list(**sentivity list** - variables that are required to execute the block when they change).
 
-      ```verilog
-      always @ ("sentivity list") begin
+        ```verilog
+        always @ ("sentivity list") begin
         //statements
-      end
-      ```
+        end
+        ```
+
 * **Structural style**
   * This is modelled using primitives.
     * Built-in gate primitives (at the gate-level
@@ -323,6 +330,7 @@ A design can be modeled in three different styles or in a mixed style. These sty
     and a1(out, in1, in2)
     fulladder f1(sum, carry, a, b, c)
     ```
+
 * **Mixed style**
   * The design is made using of all the above styles.
 
