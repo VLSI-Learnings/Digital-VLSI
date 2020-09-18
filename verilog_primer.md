@@ -7,7 +7,7 @@
 
 ## Y's
 
-**What is HDL?**\
+**What is HDL?**
 HDL is a specialized computer language used to describe the structure and behavior of electronic circuits, and most commonly, digital logic circuits.
 
 **Why HDL?**
@@ -15,9 +15,9 @@ HDL is a specialized computer language used to describe the structure and behavi
 1. Concurrent execution of statements.
 2. The language that converts the program(textual description) to a Netlist(Gate level netlist)
 3. Some characteristics like propagation delay, interconnection of parts can’t be captured with traditional languages.
-    **Why need of concurrent processng?**
-      1. Due to the complexity of digital circuits, we need to process all the instructions at the same time.
-      2. To reduce the delay in output.
+   **Why need of concurrent processng?**
+   1. Due to the complexity of digital circuits, we need to process all the instructions at the same time.
+   2. To reduce the delay in output.
 
 ## Chapter 1
 
@@ -25,7 +25,7 @@ HDL is a specialized computer language used to describe the structure and behavi
 
 * Verilog HDL is a hardware description language that can be used to model a digital systema many levels of abstraction ranging from the algorithmic level to the gate-level to the switch-level.
 * The Verilog HDL language was first developed by Gateway Design Automation(acquired by Cadence Design Systems) in 1983.
-**Verilog is case-sensitive**
+  **Verilog is case-sensitive**
 
 **Capabilities:**
 
@@ -37,7 +37,7 @@ HDL is a specialized computer language used to describe the structure and behavi
 6. The language is non-deterministic under certain situations,that is, a model may produce different resultson different simulators; for example, the ordering of events on an event queue is not defined by the standard.
 7. Explicit language constructs are provided for specifyingpin-topin delays, path delays and timing checks of a design.
 8. The capabilities of the Verilog HDL language can be further extended by using the programming language interface (PLI) mechanism.
-**PLI is a collection of routines that allow foreign functions to access information within a Verilog module and allows for designer interaction with the simulator.**
+   **PLI is a collection of routines that allow foreign functions to access information within a Verilog module and allows for designer interaction with the simulator.**
 
 ## Chapter 2
 
@@ -71,7 +71,7 @@ HDL is a specialized computer language used to describe the structure and behavi
   * initial, always, begin, case, assign, and, or, xor
   * buf, casex, default, assign, bufif0, casez
   * defparam, bufif1, cmos, disable, etc
-**Note that only lowercase are keywords**
+    **Note that only lowercase are keywords**
 
 **Comments:**
 
@@ -83,7 +83,6 @@ HDL is a specialized computer language used to describe the structure and behavi
     Description
     */
     ```
-
   * Single line
 
     ```verilog
@@ -102,12 +101,12 @@ HDL is a specialized computer language used to describe the structure and behavi
 
 * Function is like task but returns only one value.
 * This executes at zero time and doesn't allow delays.
-  
+
 **System Task and Functions:** - An identifier starting with **$** character is system task of function.
 
-  ```verilog
-  $display, $monitor
-  ```
+```verilog
+$display, $monitor
+```
 
 **Compiler Directives:**
 
@@ -118,7 +117,6 @@ HDL is a specialized computer language used to describe the structure and behavi
     `define MAX_BUS_SIZE 32
     reg [`MAX_BUS_SIZE - 1:0] var;
     ```
-
   * `undef - Removes the previously defined.
 
     ```verilog
@@ -126,7 +124,6 @@ HDL is a specialized computer language used to describe the structure and behavi
     wire [`WORD : 1] var;
     `undef WORD
     ```
-
   * `ifdef,
   * `else,
   * `endif - These directives are used in conditional compilation.
@@ -139,25 +136,23 @@ HDL is a specialized computer language used to describe the structure and behavi
     `endif
     ```
 
+
     During the compilation, if the text macro signal is defined the corresponding statement executes, and `else is optional.
   * `default_nettype - This is used to specify the **net** type for implicit net declarations.
 
     ```verilog
     `default_nettype wand
     ```
-
   * `include - This directive is used to replace the contents of the file in line
 
     ```verilog
     `include "full_path_of_file"
     ```
-
   * `resetall - This directive resets all the compiler directives to default. Exanple: causes net type to be wire.
 
     ```verilog
     `resetall
     ```
-
   * `timescale - The association of time units is done using this directive, specifies the time units and and time precision.
 
     ```verilog
@@ -165,8 +160,8 @@ HDL is a specialized computer language used to describe the structure and behavi
     `timescale 10ns/10ps
     ```
 
-    If every is having its own timescale then the least precision is taken into account.
 
+    If every is having its own timescale then the least precision is taken into account.
   * `unconnected_drive
   * `nounconnected_drive - All unconnected input ports that appear between these directives are connected to 0 or 1.
 
@@ -174,7 +169,6 @@ HDL is a specialized computer language used to describe the structure and behavi
     `unconnected_drive pull1
     `nounconnected_drive
     ```
-
   * `celldefine
   * `endcelldefine - These will mark the module as cell module(these modules are used by PLI routines for timing analysis etc).
 
@@ -195,16 +189,18 @@ HDL is a specialized computer language used to describe the structure and behavi
 * x and z are case insensitive.
 * Constants are 3 types
   * Integer - represented in two formats
+
     * Simple decimal
       * 30, -15
     * Base format
       * [size]'base value
-      ex: 4'b0101
+        ex: 4'b0101
       * Not legal formats
         * Space between ' character and base
         * Size can't be expression - (2+1)'b00000
         * value can't be negative
   * Real
+
     * Decimal format
       * 1.5, 2,670
     * Scientific format
@@ -223,35 +219,38 @@ HDL is a specialized computer language used to describe the structure and behavi
   * Represents the physical connection between the elements.
   * If no driver is connected to net, default value is z.
   * wire, tri, wor, trior, wand, triand, trireg, tril, tri0, supply0, supply 1
-  Syntax
+    Syntax
 
     ```verilog
     net_type [msb:lsb] var
     ```
-
   * wire and tri are similar types but tri is used when multiple drivers drive a net.
 
-    |wire(or tri)|0|1|x|z|
-    |:----:|----|----|----|----|
-    |0|0|x|x|0|
-    |1|x|1|x|1|
-    |x|x|x|x|x|
-    |z|0|1|x|z|
-  * wor and trior
-    |wor(or trior)|0|1|x|z|
-    |:-:|-|-|-|-|
-    |0|0|1|x|0|
-    |1|1|1|1|1|
-    |x|x|1|x|x|
-    |z|0|1|x|z|
-  * wand and triand
-    |wand(or triand)|0|1|x|z|
-    |:-:|-|-|-|-|
-    |0|0|0|0|0|
-    |1|0|1|x|1|
-    |x|0|x|x|x|
-    |z|0|1|x|z|
 
+    | wire(or tri) | 0 | 1 | x | z |
+    | :-: | - | - | - | - |
+    | 0 | 0 | x | x | 0 |
+    | 1 | x | 1 | x | 1 |
+    | x | x | x | x | x |
+    | z | 0 | 1 | x | z |
+  * wor and trior
+
+
+    | wor(or trior) | 0 | 1 | x | z |
+    | :-: | - | - | - | - |
+    | 0 | 0 | 1 | x | 0 |
+    | 1 | 1 | 1 | 1 | 1 |
+    | x | x | 1 | x | x |
+    | z | 0 | 1 | x | z |
+  * wand and triand
+
+
+    | wand(or triand) | 0 | 1 | x | z |
+    | :-: | - | - | - | - |
+    | 0 | 0 | 0 | 0 | 0 |
+    | 1 | 0 | 1 | x | 1 |
+    | x | 0 | x | x | x |
+    | z | 0 | 1 | x | z |
 * **Reg** -
 
 ## Chapter 3
@@ -261,7 +260,6 @@ HDL is a specialized computer language used to describe the structure and behavi
 * Continous AS
   * The logic derived from the RHS drives the net in LHS.
   * The target of the CAS is always a net driven by combo logic.
-
 * Procedural AS
   * The logic derived from the RHS drives the variable on the LHS.
   * These always appear in always block.
@@ -280,7 +278,6 @@ HDL is a specialized computer language used to describe the structure and behavi
   ```verilog
   assign #10 a=b^c;
   ```
-
 * Intradelay - The time by which the assignment of the RHS to the LHS is delayed.
 
   ```verilog
@@ -298,7 +295,6 @@ A design can be modeled in three different styles or in a mixed style. These sty
     ```text
     assign [delay] LHS=RHS;
     ```
-
 * **Behavioral style**
   * Design is modelled using procedural assignments.
   * This has two statements.
@@ -309,7 +305,6 @@ A design can be modeled in three different styles or in a mixed style. These sty
         clk=1'b0;
       end
       ```
-
     * Always statement - Executes in a loop based on the sensitivity list(**sentivity list** - variables that are required to execute the block when they change).
 
       ```verilog
@@ -317,7 +312,6 @@ A design can be modeled in three different styles or in a mixed style. These sty
         //statements
       end
       ```
-
 * **Structural style**
   * This is modelled using primitives.
     * Built-in gate primitives (at the gate-level
@@ -329,7 +323,6 @@ A design can be modeled in three different styles or in a mixed style. These sty
     and a1(out, in1, in2)
     fulladder f1(sum, carry, a, b, c)
     ```
-
 * **Mixed style**
   * The design is made using of all the above styles.
 
