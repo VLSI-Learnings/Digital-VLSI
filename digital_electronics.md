@@ -152,18 +152,22 @@
 
       |x + 0 = 0 + x = x|
       |--|
+
      (b) The element I is an identity element w ith respect to '.' that is
 
       |x · 1 = 1 · x = x|
       |--|
+
   3. (a) The structure is commutative with respect to '+' that is
 
       |x.y=y.x|
       |--|
+
      (b) The structure is commutative with respect to '-' that is
 
       |x.y=y.x|
       |--|
+
   4. (a) The operator . is distributive over '+' that is
 
       |x · (y+z) = (x . y) + ( x . z)|
