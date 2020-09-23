@@ -48,9 +48,9 @@
   |14|1110|16|E|
   |15|1111|17|F|
 * **Weighted Number System** - Each position of the number is represents a particular value.
-  ex: Binary, Decimal, BCD.
+  * ex: Binary, Decimal, BCD.
 * **Unweighted Number System** - There is no particular value for the positions.
-  ex: Gray code, Excess-3 code.
+  * ex: Gray code, Excess-3 code.
 * **Number system conversions**
 * **Arthimetic Operations**
   * Addition
@@ -137,10 +137,65 @@
 
 ### Chapter 2
 
+#### Boolean Algebra
 
+* The common postulates that formulates the algebric structures.
+  * Closure
+  * Associative
+  * Commutative
+  * Identity
+  * Inverse
+  * Distributive
+* Huntington postulates:
+  1. The structure is closed with respect to the operator '**+**' and '**.**'.
+  2. (a) The element 0 is an identity element with respect to '+' that is
+
+      |x + 0 = 0 + x = x|
+      |--|
+     (b) The element I is an identity element w ith respect to '.' that is
+
+      |x · 1 = 1 · x = x|
+      |--|
+  3. (a) The structure is commutative with respect to '+' that is
+
+      |x.y=y.x|
+      |--|
+     (b) The structure is commutative with respect to '-' that is
+
+      |x.y=y.x|
+      |--|
+  4. (a) The operator . is distributive over '+' that is
+
+      |x · (y+z) = (x . y) + ( x . z)|
+      |--|
+     (b) The operator + is distributive over '-' that is
+
+      |x + (y . z) = (x + y) . ( x + z)|
+      |--|
+  5. For every element x in B there exists an element x' in B (called the complement of x) such that
+
+      |x + x' = 1|x . x' = 0|
+      |--|--|
+  6. There exist at least two elements x, y in B such that
+
+      |x != y|
+      |--|
+* ***Binary logic*** - The variables with logic operations that has two discrete values.
+* ***Truth table*** - The represents the information of output for all the combinations of inputs.
+* ***Logic gate*** - A physical device that performs logical on one or more binary inputs and produces a single output.
+  * **Basic gates: (AND, OR, NOT)**
+    * Any digital circuit can be implemented using these gates.
+  * **Universal gates:(NAND, NOR)**
+    * Any logic can be implemented using only these gates.
+  * **Arthimetic gates:(XOR, XNOR)**
+    * Used in arthimetic operations
+* **Duality**
+  * The expressions that are deduciable from the postulates of the boolean algebra are remain valid if the operands and identity elements are interchanged.
+    * **Self dual** - The same expression is obtained when the operands are interchaged two times.
+* **Operator precedence** - The operator precedence for evaluating Boolean expressions is (1) parenthesis, (2) NOT, (3) AND and (4) OR.
 
 ### Chapter 5
 
-* **Binary cell** - A physical device that has two stable states and capable of storing one bit.
+* **Binary cell** - A electronic physical device that has two stable states and capable of storing one bit.
 * **Register** - A group of binary cells
 * A ***register transfer*** operation is a basic operation that consists of a transfer of binary information from one set of registers into another set of registers.
