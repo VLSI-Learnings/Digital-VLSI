@@ -88,10 +88,6 @@
      s=A-B
     * final carry = 1 then result=s
     * final carry = 0 then result=2's complement of s
-* **Positive logic**
-  * "1" level vaule of the variable > "0" level value
-* **Negative logic**
-  * "1" level value of the variable < "0" level value
 * **Codes**
   * Group of symbols mainly numbers or letters.
     * Weighted code
@@ -146,6 +142,10 @@
   * Identity
   * Inverse
   * Distributive
+  * De-morgan's law
+
+    |(x + y)' = x' . y'|(x.y)' = x' + y' |
+    |--|--|
 * Huntington postulates:
   1. The structure is closed with respect to the operator '**+**' and '**.**'.
   2. (a) The element 0 is an identity element with respect to '+' that is
@@ -163,7 +163,7 @@
       |x.y=y.x|
       |--|
 
-     (b) The structure is commutative with respect to '-' that is
+     (b) The structure is commutative with respect to '.' that is
 
       |x.y=y.x|
       |--|
@@ -172,7 +172,8 @@
 
       |x · (y+z) = (x . y) + ( x . z)|
       |--|
-     (b) The operator + is distributive over '-' that is
+
+     (b) The operator + is distributive over '.' that is
 
       |x + (y . z) = (x + y) . ( x + z)|
       |--|
@@ -184,6 +185,7 @@
 
       |x != y|
       |--|
+* ***Literal*** - The single variable in the term of the boolean expression.
 * ***Binary logic*** - The variables with logic operations that has two discrete values.
 * ***Truth table*** - The represents the information of output for all the combinations of inputs.
 * ***Logic gate*** - A physical device that performs logical on one or more binary inputs and produces a single output.
@@ -196,7 +198,51 @@
 * **Duality**
   * The expressions that are deduciable from the postulates of the boolean algebra are remain valid if the operands and identity elements are interchanged.
     * **Self dual** - The same expression is obtained when the operands are interchaged two times.
+* **Complement** - Negation of the function.
+  * This can be obtained by taking negation for the whole function
+  * First take the dual form and complement each literal
+  * ex:
+    f=x'y'z
+    dual form f=x'+y'+z
+    f'=x+y+z'
 * **Operator precedence** - The operator precedence for evaluating Boolean expressions is (1) parenthesis, (2) NOT, (3) AND and (4) OR.
+* **Minterm**(Standard product) - The term of literals in their normal or complemented form and their product is 1.
+* **Maxterm**(Standard sum) - The term of literals in their normal or complemented form and their sum is 0.
+* **Canonical form** - Boolean functions expressed as a sum of minterms or product of maxterms.
+* **Standard form**
+  * **SOP**(Sum of Products) - Boolean function expressed as ORing of product terms with single or multiple literals.
+  * **POS**(Products of Sum) - Boolean function expressed as ANDing of sum terms with single or multiple literals.
+* **Factors** considered for building of logic gates
+  1. Feasibility and economy of producing the gate with physical components.
+  2. The possibility of extending the gate to two or more than two inputs.
+  3. The basic properties of the binary operator, such as commutativity and associativity, etc
+  4. The ability of the gate to implement Boolean functions alone or in conjunction with other gates.
+* **Positive logic**
+  * "1" level vaule of the variable > "0" level value
+* **Negative logic**
+  * "1" level value of the variable < "0" level value
+* Levels of Integration
+  * Digital circuits are often categorized according to the complexity of their circuits as measured by the number of logic gates in a single package .
+  * Small-scale integration (SSI)
+  * Medium-scale integration (MSI)
+  * Large-scale integration (LSI)
+  * Very large-scale integration (VLSI)
+* **Digital Logic Family**(More in [chapter 10](https://github.com/VLSI-Learnings/Digital-VLSI/blob/master/digital_electronics.md#chapter-10))
+  * Each logic family has its own basic electronic circuit upon which more complex digital circuits and components are developed.
+  * TIL - transistor-transistor logic
+  * ECL - emitter-coupled logic
+    * systems requiring high speed operation
+  * MOS - metal-oxide semiconductor
+    * circuit that needs high component density
+  * CMOS - complementary metal-oxide semiconductor.
+    * systems that need low power comsumption
+* **Fan-out** - The no.of standard loads that the output of the gate can drive without impairing its operation.
+* **Fan-in** - The no.of inputs available in a gate.
+* **Power disspation** - The power consumed by the gate available from the power supply.
+* **Propagation Delay** - The average transition delay for the signal to propagate from input to output.
+* **Noise Margin** - The maximum external noise voltage added to the signal that does not cause an undesirable state to the output.
+
+### Chapter 3
 
 ### Chapter 5
 
