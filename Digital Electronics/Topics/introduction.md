@@ -1,6 +1,6 @@
-# Digitial Electronics(NPTEL & Morris Mano)
+# Introduction
 
-## All the topics of Digital Electronics are here
+## About logic gates, its properties and minimization
 
 * [Chapter 1](https://github.com/VLSI-Learnings/Digital-VLSI/blob/master/digital_electronics.md#chapter-1) - Basics
 * [Chapter 2](https://github.com/VLSI-Learnings/Digital-VLSI/blob/master/digital_electronics.md#chapter-2) - Boolean Algebra and logic gates
