@@ -2,4 +2,11 @@
 
 ## All the topics of Digital Electronics are covered here
 
-* [Introduction](https://github.com/VLSI-Learnings/Digital-VLSI/blob/master/Digital%20Electronics/Topics/introduction.md) - About logic gates, its properties, Boolean Algebra and minimization.
+* [Introduction](/Digital%20Electronics/Topics/introduction.md) - About logic gates, its properties, Boolean Algebra and minimization.
+* [References](/Digital%20Electronics/digital_electronics.md#References)
+
+### References
+
+* Digital Design by M Morris Mano (4th ed)
+* [NPTEL - Digital Electronics](https://www.youtube.com/playlist?list=PL803563859BF7ED8C)
+* [NESO ACADEMY](https://www.youtube.com/playlist?list=PLBlnK6fEyqRjMH3mWf6kwqiTbT798eAOm)
