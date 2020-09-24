@@ -2,8 +2,9 @@
 
 ## About logic gates, its properties and minimization
 
-* [Chapter 1](https://github.com/VLSI-Learnings/Digital-VLSI/blob/master/digital_electronics.md#chapter-1) - Basics
-* [Chapter 2](https://github.com/VLSI-Learnings/Digital-VLSI/blob/master/digital_electronics.md#chapter-2) - Boolean Algebra and logic gates
+* [Chapter 1](https://github.com/VLSI-Learnings/Digital-VLSI/blob/master/Digital%20Electronics/Topics/introduction.md#chapter-1) - Basics
+* [Chapter 2](https://github.com/VLSI-Learnings/Digital-VLSI/blob/master/Digital%20Electronics/Topics/introduction.md#chapter-2) - Boolean Algebra and logic gates
+* [Chapter 3](https://github.com/VLSI-Learnings/Digital-VLSI/blob/master/Digital%20Electronics/Topics/introduction.md#chapter-3) - Gate Level Minimization
 
 ### Chapter 1
 
