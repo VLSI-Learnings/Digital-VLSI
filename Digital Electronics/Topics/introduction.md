@@ -247,6 +247,18 @@
 
 * **Gate level minimization**
   * refers to the design task of finding an optimal gate-level implementation of the Boolean functions describing a digital circuit.
+* Methods
+  * Using boolean algebric laws.
+  * Karnaugh map(K-map)
+  * Quine McCluskey minimization technique(tabular method)
+* **Karnaugh map(K-map)**
+  * Follows rule of adjacency.
+* **Implicants**
+  * The terms obtained by grouping the 1's from the true table.
+* **Prime Implicats**
+  * This the largest group of adjacent 1's possible in the map.
+* **Essential Prime Implicants**
+  * If a minterm is covered in only one prime implicant.
 
 ### Chapter 5
 

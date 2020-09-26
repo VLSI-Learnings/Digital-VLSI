@@ -7,6 +7,6 @@
 
 ### References
 
-* Digital Design by M Morris Mano (4th ed)
+* Digital Design by M Morris Mano
 * [NPTEL - Digital Electronics](https://www.youtube.com/playlist?list=PL803563859BF7ED8C)
 * [NESO ACADEMY](https://www.youtube.com/playlist?list=PLBlnK6fEyqRjMH3mWf6kwqiTbT798eAOm)
