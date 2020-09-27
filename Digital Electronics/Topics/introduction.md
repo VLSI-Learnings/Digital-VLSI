@@ -130,6 +130,9 @@
   * Parity bit - The extra bit included in the bit stream.(This can detect only when odd no.of bits are changed)
     * Even parity - The bit should such that overall 1's be even.
     * Odd parity - The bit should such that overall 1's be odd.
+* The circuit that generates the parity bit in the transmitter is called a **Parity Generator**.
+* The circuit that checks the parity in the
+receiver is called a **Parity Checker**.
 * **Code convertions**
 
 ### Chapter 2
@@ -253,12 +256,33 @@
   * Quine McCluskey minimization technique(tabular method)
 * **Karnaugh map(K-map)**
   * Follows rule of adjacency.
+  * In choosing adjacent squares in a map, we must en sure that
+    1. all the minterms of the function are covered when we combine the squares
+    2. the number of terms in the expression is minimized
+    3. there are no redundant terms (i.e .. minrerms alrea dy cove red by other terms).
+  * Boolean function can be written in both ways SOP and POS.
+    * For SOP we consider minterms and for POS consider maxterms.
+* **Don't care conditions**
 * **Implicants**
   * The terms obtained by grouping the 1's from the true table.
 * **Prime Implicats**
   * This the largest group of adjacent 1's possible in the map.
 * **Essential Prime Implicants**
-  * If a minterm is covered in only one prime implicant.
+  * If atleast one minterm is covered in only one prime implicant.
+* **NAND n NOR**
+  * Most of the digital circuits are made of NAND n NOR because these are easier to fabricate with electronic components.
+* **AND-OR-INVERT function**
+
+  |F = (AB)'· · (CD)' = (AB + CD)' = (A' + B')(C' + D')|
+  |--|
+* **OR-AND-INVERT function**
+  |F = (A + B)' + (C + D )' = [(A + B)(C + D)]'|
+  |--|
+* **Degenerate forms**
+  * In two level implementation, the combinations of the same gates like NAND-NAND AND-AND OR-OR etc.
+  * Since these are degenerate to single operation. 
+* **Non Degenerate forms**
+  * In two level implementation, the combinations of the different gates like NAND-AND AND-NAND OR-NOR etc.
 
 ### Chapter 5
 

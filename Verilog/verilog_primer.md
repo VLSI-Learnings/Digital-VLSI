@@ -61,6 +61,9 @@ HDL is a specialized computer language used to describe the structure and behavi
     endmodule
   ```
 
+* **Test Bench**
+  * The stimulus (i.e.. the logic values of the inputs to a circuit) that tests the functionality of the design is called a Test bench
+
 **Identifiers:**
 
 * An identifier in Verilog HDL is any sequence of letters,digits,the $ character, and the _ (underscore) character, with the restriction that the first character must be a letter or an underscore.
