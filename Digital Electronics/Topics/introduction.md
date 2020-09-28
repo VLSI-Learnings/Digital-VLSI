@@ -280,12 +280,6 @@ receiver is called a **Parity Checker**.
   |--|
 * **Degenerate forms**
   * In two level implementation, the combinations of the same gates like NAND-NAND AND-AND OR-OR etc.
-  * Since these are degenerate to single operation. 
+  * Since these are degenerate to single operation.
 * **Non Degenerate forms**
   * In two level implementation, the combinations of the different gates like NAND-AND AND-NAND OR-NOR etc.
-
-### Chapter 5
-
-* **Binary cell** - A electronic physical device that has two stable states and capable of storing one bit.
-* **Register** - A group of binary cells
-* A ***register transfer*** operation is a basic operation that consists of a transfer of binary information from one set of registers into another set of registers.
