@@ -251,7 +251,7 @@ receiver is called a **Parity Checker**.
 * **Gate level minimization**
   * refers to the design task of finding an optimal gate-level implementation of the Boolean functions describing a digital circuit.
 * Methods
-  * Using boolean algebric laws.
+  * Boolean algebric manipulation.
   * Karnaugh map(K-map)
   * Quine McCluskey minimization technique(tabular method)
 * **Karnaugh map(K-map)**
