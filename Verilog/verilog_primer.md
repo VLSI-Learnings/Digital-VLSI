@@ -295,7 +295,7 @@ $display, $monitor
 
 A design can be modeled in three different styles or in a mixed style. These styles are:
 
-* **Dataflow style**
+* **Dataflow modelling**
   * The basic mechanism used to modela design in the dataflow style is the continuous assignment.
   * In a continuous assignment, a value is assigned to a net.
 
@@ -303,7 +303,7 @@ A design can be modeled in three different styles or in a mixed style. These sty
     assign [delay] LHS=RHS;
     ```
 
-* **Behavioral style**
+* **Behavioral modelling**
   * Design is modelled using procedural assignments.
   * This has two statements.
     * Initial statement - Executes only once.
@@ -322,7 +322,7 @@ A design can be modeled in three different styles or in a mixed style. These sty
         end
         ```
 
-* **Structural style**
+* **Structural modelling**
   * This is modelled using primitives.
     * Built-in gate primitives (at the gate-level
     * Switch-levelprimitives (at the transistor-level)
@@ -334,8 +334,11 @@ A design can be modeled in three different styles or in a mixed style. These sty
     fulladder f1(sum, carry, a, b, c)
     ```
 
-* **Mixed style**
+* **Mixed modelling**
   * The design is made using of all the above styles.
+
+* **Switch level modelling**
+	* used in the simulation of MOS transistor circuit
 
 Simulating a Design
 

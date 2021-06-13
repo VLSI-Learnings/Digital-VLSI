@@ -60,3 +60,9 @@
   * A multiplexer is a combinational circuit that selects binary information from one of many input lines and directs it to a single output line.
   * The selection of a particular input line is controlled by a set of selection lines.
 * **Three state gates**(Tristate buffer)
+	* Digital circuit that exhibit three states.
+	* Two states are equivalent to logic 1 and 0.
+	* Third states is high impedance staes in which
+		* the logic behaves like an open circuit.
+		* the circuithas no logic significance.
+		* the circuitconnected to the output of the three state gate is not affected by the inputs of the gate.
