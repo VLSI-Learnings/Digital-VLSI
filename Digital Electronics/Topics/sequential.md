@@ -70,3 +70,39 @@
 	S. Choose the type of flip-flops to be used.
 	6. Derive the simplified flip-flop input equations and output equations.
 	7. Draw the logic diagram.
+
+
+
+* **Asynchronous sequential circuits**
+	* The memory elements in asynchronous sequential circuits are either unclocked flip-flops or time -delay elements.
+	* The design of asynchronous sequential circuits is more difficult than that of synchronous circuits because of the timing problems involved in the feedback path.
+	* Asynchronous sequential circuits are useful in a variety of applications.
+	* They are used when speed of operation is important, especially in those cases where the digital system must respond quickly without having to wait for a clock pulse.
+	* The present-state and next-state variables in asynchronous sequential circuits are customarily called secondary variables and excitation variables, respectively.
+	* 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
