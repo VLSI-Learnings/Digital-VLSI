@@ -2,7 +2,7 @@
 
 * [Y's](https://github.com/VLSI-Learnings/Digital-VLSI/blob/master/verilog_primer.md#ys)
 * [Chapter 1](https://github.com/VLSI-Learnings/Digital-VLSI/blob/master/verilog_primer.md#chapter-1) - Introduction
-* [Chapter 2](https://github.com/VLSI-Learnings/Digital-VLSI/blob/master/verilog_primer.md#chapter-2) - Elements & Syntax
+* [Chapter 2](https://github.com/VLSI-Learnings/Digital-VLSI/blob/master/verilog_primer.md#chapter-2) - Data types
 * [Chapter 3](https://github.com/VLSI-Learnings/Digital-VLSI/blob/master/verilog_primer.md#chapter-3) - Modelling
 
 ## Y's
@@ -206,8 +206,6 @@
 
 ## Chapter 3
 
-**Assignment Statements(AS):**
-
 **Module:**
 
 * The basic unit of description in HDL is the module.
@@ -227,6 +225,8 @@
     .
     endmodule
   ```
+
+**Assignment Statements(AS):**
 
 * Continous AS
   * The logic derived from the RHS drives the net in LHS.
