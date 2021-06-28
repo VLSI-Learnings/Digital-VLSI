@@ -5,6 +5,7 @@
 * [Chapter 2](https://github.com/VLSI-Learnings/Digital-VLSI/blob/master/verilog_primer.md#chapter-2) - Data types
 * [Chapter 3](https://github.com/VLSI-Learnings/Digital-VLSI/blob/master/verilog_primer.md#chapter-3) - Modelling
 * [Chapter 4](https://github.com/VLSI-Learnings/Digital-VLSI/blob/master/verilog_primer.md#chapter-4) - Syntax
+* [Chapter 5](https://github.com/VLSI-Learnings/Digital-VLSI/blob/master/verilog_primer.md#chapter-5) - Gate level modelling
 
 ## Y's
 
