@@ -1,4 +1,44 @@
-# Task & Functions
+# Task & Functions & User Defined Primitives
+
+## UDP
+
+* A UDP is defined using a UDP declaration which has the following syntax.
+  primitive UDP_name ( OutputName , List_of_inputs );
+    Output_declaration
+    List_of__input_declarations
+    [ Reg_declaration ]
+    [ Initial_statement ]
+    table
+      List_of_table_en tries
+    endtable
+  endprimitive
+* UDP definition does not depend on a module definition and thus appears outside of a module definition. A UDP definition can also be in a separate text file.
+* UDP can have only one output and may have one or more inputs. The first port must be the output port. In addition, the output can have the value 0, 1 or x (z is not allowed). If a value z appears on the input, it is treated as an x.
+* The behavior of a UDP is described in the form of a table. The following two kinds of behavior can be described in an UDP.
+  1. Combinational
+  2. Sequential (edge-triggered and level-sensitive).
+
+* **Combinational UDP**
+  * In a combinational UDP,the table specifies the various input combinations and their corresponding output values. Any combination that is not specified is an x for the output.
+
+      ```verilog
+      primitive mux_21(
+        output Z,
+        input a,b,sel);
+          table
+            //a b sel : Z
+              0 ?   1 : 0;
+              1 ?   1 : 1;
+              ? 0   0 : 0;
+              ? 1   0 : 1;
+              0 0   x : 0;
+              1 1   x : 1;
+          endtable
+        endprimitive
+      ```
+
+  * The ? character representsa don't-care value, that is, it could either be a 0, 1 or x.
+  * The order of the input ports must match the order of entries in the table.
 
 **Identifiers:**
 

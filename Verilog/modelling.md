@@ -1,5 +1,9 @@
 # Modelling
 
+* [Gate level modelling](/Verilog/modelling.md#Gate level modelling)
+
+## Gate level modelling
+
 * Built-in primitive gates
   * The following built-in primitive gates are available in Verilog HDL.
     1. Multiple-input gates - These gates have one or more inputs and one output.
@@ -38,6 +42,31 @@
           ||z|z|z|z|z|
        * The cmos(complimentary MOS) and rcmos(resistive version of cmos) switches have one data output, one data input and two control inputs.
        * (r)cmos [instance_name] ( OutputA , InputB , NControl , PControl);
-    6. Bidirectional switches:
+    6. Bidirectional switches - data flows both ways and there is no delay when data propagates through the switches.
        * tran, tranif0, tranif1, rtran, rtranif0,rtranif1.
-  * A gate can be used in adesing using a gate instantiation.
+       * The last four switches can be turned off by setting a control signal appropriately. The tran and rtran switches cannot be turned off.
+       * The syntax for instantiating a tran or a rtran (resistive version of tran) switch is:
+         * (r)tran [ instance_name ] ( SignalA , SignalB);
+       * For remaining switches
+         * gate__type [ instance_name ] ( SignalA , SignalB , ControlC)
+* **Gate Delays**
+  * The signal propagation delay from any gate input to the gate output can be specified using gate delay.
+    * gate_type [ delay ] [ instance_name ] ( terminal_list );
+  * A gate delay can be comprised of up to three values:
+    1. rise delay
+    2. fall delay
+    3. turn-off delay
+
+        ||No delay|1 value(d)|2 values(d1,d2)|3 values(dA,dB,dC)|
+        |---|---|---|---|---|
+        |rise|0|d|d1|dA|
+        |fall|0|d|d2|dB|
+        |to_x|0|d|min(d1,d2)|min(dA,dB,dC)|
+        |turn-off|0|d|min(d1,d2)|dC|
+  * to_x - transition to x delay
+  * delay for a gate (including all other delays such as in continuous assignments) can also be specified in a min:typ:max form. The form is minimum : typical : maximum
+  * Multiple-input gates, such as and and or, and multiple-output gates (buf and not) can have only up to two delays specified(since output never goes to z).
+  * Tristate gates can have up to three delays and the pull gates cannot have any delays.
+* **Array of instances**
+  * When repetitive instances are requied a range specification can optionally be specified in a gate instantiation.
+  * gate_type [ delay ] instance_name [ leftbound : rightbound ] ( list __of_ terminal_names );
