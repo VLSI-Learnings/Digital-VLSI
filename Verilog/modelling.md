@@ -70,3 +70,16 @@
 * **Array of instances**
   * When repetitive instances are requied a range specification can optionally be specified in a gate instantiation.
   * gate_type [ delay ] instance_name [ leftbound : rightbound ] ( list __of_ terminal_names );
+
+## Dataflow Modelling
+
+* Continous Assignment
+  * A continuous assignment assigns a value to a net.
+  * assign lhs_target = rhs_expression
+  * The target in a continuous assignment can be one of the following.
+    1. Scalar net
+    2. Vector net
+    3. Constant bit-select of a vector
+    4. Constant part-select of a vector
+    5. Concatenation of any of the above
+  * These assignments are concurrent in the sense that they are order independent.

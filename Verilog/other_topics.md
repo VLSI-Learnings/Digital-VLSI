@@ -40,6 +40,73 @@
   * The ? character representsa don't-care value, that is, it could either be a 0, 1 or x.
   * The order of the input ports must match the order of entries in the table.
 
+* **Sequential UDP**
+  * In a sequential UDP, the internal state is described using a 1-bit register. The value of this register is the output of the sequential UDP.
+  * There are two different kinds of sequential UDP, one that models level sensitive behavior and another that models edge-sensitive behavior.
+  * A sequential UDP uses the current value of the register and the input values to determine the next value of the register (and consequently the output).
+  * **Initializing the state register**
+    * The state of a sequential UDP can be initialized by using an initial statement that has one procedural assignment statement.
+      initial reg_name = 0, 1 or x;
+
+  * **Level-sensitive sequential UDP**
+
+      ```verilog
+      primitive d_latch(
+        output Q,
+        reg Q,
+        input Clk,D);
+        initial Q = 0;
+          table
+            // Clk  D : Q(state): Q(next)
+                0   1 : ?       : 1 ;
+                0   0 : ?       : 0 ;
+                1   ? : ?       : - ;
+          endtable
+        endprimitive
+      ```
+
+    * The - character implies a "no change". Note that the state of the UDP is stored in register Q
+  * **Edge triggered sequential UDP**
+
+      ```verilog
+      primitive d_ff(
+        output Q,
+        reg Q,
+        input Clk,D);
+        initial Q = 0;
+          table
+            // Clk  D : Q(state): Q(next)
+                01  1 : ?       : 1 ;
+                01  0 : ?       : 0 ;
+                0x  1 : 1       : 1 ;
+                0x  0 : 0       : 0 ;
+              //ignore negative edge clock
+                ?0  ? : ?       : - ;
+              //ignore on steady clock
+                ?   ? : ?       : - ;
+          endtable
+        endprimitive
+      ```
+
+    * The table entry (01) indicates a transition from 0 to 1, the entry (Ox) indicates a transition from 0 to x, the entry (?0) indicates a transition from any value (0,1, or x) to 0, and the entry (??) indicates any transition.
+    * For any unspecified transition, the output defaults to an x.
+  * Table entries
+
+    |Symbol|Meaning|
+    |--|--|
+    |0|logic 0|
+    |1|logic 1|
+    |x|unknown|
+    |?|any of 0, 1,or x|
+    |b|any of 0 or 1|
+    |-|no change|
+    |(AB)|value change from A to B|
+    |*|sameas(??)|
+    |r|same as (01)|
+    |f|same as (10)|
+    |p|any of (01), (Ox), (xl)|
+    |n|any of (10), (lx),(x0)|
+
 **Identifiers:**
 
 * An identifier in Verilog HDL is any sequence of letters,digits,the $ character, and the _ (underscore) character, with the restriction that the first character must be a letter or an underscore.
