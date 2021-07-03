@@ -1,9 +1,9 @@
 # Modelling
 
-* [Gate level modelling](/Verilog/modelling.md#Gate%20level%20modelling)
-* [Dataflow Modelling](/Verilog/modelling.md#Dataflow%20Modelling)
-* [Behavioral Modelling](/Verilog/modelling.md#Behavioral%20Modelling)
-* [Structural Modelling](/Verilog/modelling.md#Structural%20Modelling)
+* [Gate level modelling](/Verilog/modelling.md#gate-level-modelling)
+* [Dataflow Modelling](/Verilog/modelling.md#dataflow-modelling)
+* [Behavioral Modelling](/Verilog/modelling.md#behavioral-modelling)
+* [Structural Modelling](/Verilog/modelling.md#structural-modelling)
 
 ## Gate level modelling
 
@@ -250,3 +250,5 @@
        * The force statement, when applied to a register,causes the current value of the register to be overridden by the value of the force expression. When a release on the register is executed, the current value is held in the register unless a procedural continuous assignment was already in effect (at the time the force statement was executed) in which case, the continuous assignment establishes the new value of the register.
   * The target of a procedural continuous assignment cannot be a part-select or a bit-select of a register.
   * Both the assignments can be used in the same procedural continuous blocks
+
+## Structural Modelling
