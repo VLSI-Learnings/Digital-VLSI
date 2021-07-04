@@ -2,10 +2,6 @@
 
 ## All about the memory elements
 
-* [Chapter 1](/Digital%20Electronics/Topics/register.md#chapter-1)
-
-### Chapter 1
-
 * **Binary cell** - A electronic physical device that has two stable states and capable of storing one bit.
 * ***Register transfer*** operation is a basic operation that consists of a transfer of binary information from one set of registers into another set of registers.
 * Counter is essentially a register that goes through a predetermined sequence of binary states.

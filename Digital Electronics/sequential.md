@@ -1,15 +1,10 @@
 # Sequential circuits
 
-* The circuit whose output depends not only on the present state inputs and also on the previous state of the storage elements.
-
-## Asynchronous Sequential circuits
-
-* sequential circuit depends upon the input signals at any instant of time and the order in which the inputs change.
-
-## Synchronous Sequential circuits
-
-* a system whose behavior can be defined from the knowledge of its signals at discrete instants of time.
-
+* The circuit whose output depends on both the present state inputs and also on the previous state of the storage elements.
+* **Asynchronous Sequential circuits**
+  * sequential circuit depends upon the input signals at any instant of time and the order in which the inputs change.
+* **Synchronous Sequential circuits**
+  * a system whose behavior can be defined from the knowledge of its signals at discrete instants of time.
 * **Latches**
   * Storage elements that are operated with signal levels
   * sr latch, d latch(transparent latch)
