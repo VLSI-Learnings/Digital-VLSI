@@ -28,7 +28,7 @@
       * 4e-2 (0.04)
   * String - A sequence of characters within the double quotes.
     * A character is represented by an 8-bit ASCII value which is treated as an unsigned integer.
-    * The backslash (\) character can be used to escape certain special characters.
+    * The backslash (\\) character can be used to escape certain special characters.
     * \n - newline
     * \t - tab
     * \\ - \ character
@@ -40,10 +40,10 @@
 
 * An underscore (_) character can be used in an integer or a real constant freely; they are ignored in the number itself. They can be used to improve readability; the only restriction is that the underscore character cannot be the first character.
 * A number in base format notation is always an unsigned number.
-* If the size specified is larger than the no of bits for the constant, the number is padded to the left with O's except for the case where the leftmost bit is a x or a z, in which a x or a z respectively is used to pad to the left.
-  * For example,
-10'b10 Padded with 0 to the left, 0000000010
-10'bx0x1 Paddedwith x to the left, xxxxxxx0x1
+* If the size specified is larger than the no of bits for the constant, the number is padded to the left with 0's except for the case where the leftmost bit is a x or a z, in which a x or a z respectively is used to pad to the left.
+  * For example:
+    10'b10 padded with 0 to the left, 0000000010
+    10'bx0x1 Paddedwith x to the left, xxxxxxx0x1
 * If the size specified is smaller, then the leftmost bits are appropriately truncated.
 
 **Data Types:**
