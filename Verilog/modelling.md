@@ -252,3 +252,33 @@
   * Both the assignments can be used in the same procedural continuous blocks
 
 ## Structural Modelling
+
+* Structural modeling is described using:
+  * Gate instantiation
+  * UDP instantiation
+  * Module instantiation
+* **Module instantiation**
+  * Module - the basic unit in verilog hdl.
+  * Port - A port can be declared as input, output or inout. A port by default is a net.
+  * A module can be instantiated in another module, thus creating hierarchy. A module instantiation statement is of the form:
+    module_name instance_name ( port_associations );
+  * Port associations can be by position or by name; however, associations cannot be mixed.
+    port_expr // By position.
+    .PortName ( port_expr ) // By name.
+    where port_expr can be any of the following:
+    1. an identifier (a register or a net)
+    2. a bit-select
+    3. a part-select
+    4. a concatenation of the above
+    5. an expression (only for input ports)
+  * Unconnected ports in an instantiation can be specified by leaving the port expression blank.
+  * Unconnected ports or unused bits have value z.
+* When a module is instantiated in another module, the higher level module can change the value of the parameters in a lower level module. This can be donein two ways.
+  1. Defparam statement
+  2. Module instance parameter value assignment
+* **Defparam statement**
+  * A defparam statement is of the form:
+    defparam hier_path_namel = valuel ,
+              hier_path_name2 = value2;
+  * The hierarchical path names of the parameters in a lower level module can be explicitly set by using such a statement.
+* **External ports**
