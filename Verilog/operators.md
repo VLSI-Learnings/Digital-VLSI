@@ -1,7 +1,7 @@
 # Expression and Operators
 
 * Expressions
-  * An expression is formed using operands and operators.An expression can be used wherever a value is expected.
+  * An expression is formed using operands and operators. An expression can be used wherever a value is expected.
   * An operand can be one of the following:
     1. Constant
        * The negative value of an integer with no base specifier is treated as a signed value, while an integer with a base specifier is treated as an unsigned value.
@@ -40,7 +40,8 @@
        * The size of the result of an arithmetic expression is determined by the size of the largest operand.
        * In case of an assignment, it is determined by the size of the left-hand side target as well.
        * Unsigned & signed
-         * When performing arithmetic operations and assignments, it is important to note which operands are being treated as unsigned values and which are being treated as signed values. * An unsigned value is stored in:
+         * When performing arithmetic operations and assignments, it is important to note which operands are being treated as unsigned values and which are being treated as signed values.
+         * An unsigned value is stored in:
            * a net
            * a reg register
            * an integer in base format notation
