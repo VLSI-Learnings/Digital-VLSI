@@ -42,8 +42,8 @@
 * A number in base format notation is always an unsigned number.
 * If the size specified is larger than the no of bits for the constant, the number is padded to the left with 0's except for the case where the leftmost bit is a x or a z, in which a x or a z respectively is used to pad to the left.
   * For example:
-    10'b10 padded with 0 to the left, 0000000010
-    10'bx0x1 Paddedwith x to the left, xxxxxxx0x1
+    1. 10'b10 padded with 0 to the left, 0000000010
+    2. 10'bx0x1 Paddedwith x to the left, xxxxxxx0x1
 * If the size specified is smaller, then the leftmost bits are appropriately truncated.
 
 **Data Types:**
