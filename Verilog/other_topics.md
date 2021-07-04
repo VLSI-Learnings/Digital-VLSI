@@ -112,65 +112,77 @@
 
 ## Task & Functions
 
-**Identifiers:**
+* **Identifiers:**
+  * An identifier in Verilog HDL is any sequence of letters,digits,the $ character, and the _ (underscore) character, with the restriction that the first character must be a letter or an underscore.
 
-* An identifier in Verilog HDL is any sequence of letters,digits,the $ character, and the _ (underscore) character, with the restriction that the first character must be a letter or an underscore.
-
-**Keywords:**
-
-* These are predefined identifiers which has specific meaning and used in certain context.
+* **Keywords:**
+  * These are predefined identifiers which has specific meaning and used in certain context.
   * initial, always, begin, case, assign, and, or, xor
   * buf, casex, default, assign, bufif0, casez
   * defparam, bufif1, cmos, disable, etc
     **Note that only lowercase are keywords**
 
-**Comments:**
+* **Comments:**
+  * In verilog we can comment the description in two ways.
+    * Multiple lines
 
-* In verilog we can comment the description in two ways.
-  * Multiple lines
+      ```verilog
+      /*
+      Description
+      */
+      ```
 
-    ```verilog
-    /*
-    Description
-    */
-    ```
+    * Single line
 
-  * Single line
+      ```verilog
+      //Description
+      //Description
+      ```
 
-    ```verilog
-    //Description
-    //Description
-    ```
-
-**Format:** Verilog is free format, statements can be written in a single line or multiple lines.
-
+* **Format:** Verilog is free format, statements can be written in a single line or multiple lines.
 * **Task:**
   * Task is a reusable code that can be invoked from different parts of the design.
   * A task can return zero or more values and can allows delays(mostly used in test benches).
   * A task can call a another task or a function
+
+    ```text
     task task_id ;
       [ declarations ]
       procedural_statement
     endtask
+    ```
+
   * Task calling
     * A task is called by a task enable statement that specifies the argument values passed to the task and the variables that receive the results. A task enable statement is a procedural statement and can thus appear within an always or an initial statement. It is of the form:
+
+      ```text
       task_id [ ( exprl , expr2 , exprN) ] ;
+      ```
+
     * The list of arguments must match the order of input, output and inout declarations in the task definition. In addition, arguments are passed by value, not by reference.
 * **Function:**
   * Function is like task but returns only one value.
   * This executes at zero time, must have atleast one input and doesn't allow delays.
   * A function can call another function but not another task because task has delays.
   * A function definition can appear anywhere in a module declaration. It is of the form:
+
+      ```text
       function [ range ] function_id ;
         input_declaration
         other_declarations
         procedural_statement
       endfunction
+      ```
+
   * An input to the function is declared using the input declaration. If no range is specified with the function definition, then a 1-bit return value is assumed.
   * The function definition implicitly declares a register internal to the function, with the same name and range as the function. A function returns a value by assigning a value to this register explicitly in the function definition.
   * Function calling
     * A function call is part of an expression. It is of the form:
+
+      ```text
       reg_name = func__id ( exprl , expr2 , exprN)
+      ```
+
 * all local registers declared within a function/task definition are static, that is, local registers within a function retain their values between multiple invocations of the function/task.
 
 * **System Task and Functions:** - An identifier starting with **$** character is system task of function.
@@ -200,15 +212,23 @@
         * These tasks monitor the specified arguments continuously. Whenever there is a change of value in an argument in the argument list, the entire argument list is displayed at the end of the time step.
         * Monitoring can be turned on and off by using the following two system tasks.
         * $monitoroff; // Disables all monitors.
-          $monitoron; // Enables all monitors.
+        * $monitoron; // Enables all monitors.
         * These provide a mechanism to control dumping of value changes.
         * The $monitoroff task turns off all monitoring so that no more messages are displayed. The $monitoron task is used to enable all monitoring.
   * **File I/O Tasks**
     * Opening and Closing Files.
     * A system function $fopen is available for opening a file.
+
+      ```text
       integer file_pointer = $fopen ( file_name ); // The $fopen system function returns an integer value (a pointer) to the file.
+      ```
+
     * A system task can be used to close a file.
+
+      ```text
       $fclose (file_pointer);
+      ```
+
     * **Writing out to a File**
       * The display, write, strobe and monitor system tasks have a corresponding counter part that can be used to write information to a file. These are:
       * $fdisplay $displayb $displayh $displayo
@@ -219,20 +239,34 @@
     * **Reading from a File**
       * There are two system tasks available for reading data from a file. These tasks read data from a text file and load the data into memory. These system tasks are:
       * $readmemb $readmemh
+
+        ```text
         reg [0:3] Mem_A [0:63];
         initial
           $readmemb ("ones_and_zeros.vec", Mem_A);
+        ```
+
       * Optionally an explicit address can also be specified in the system task call, such as:
+
+        ```text
         $readmemb ("rx.vec", Mem_A, 15, 30);  // The first number read from the file "rx.vec" is stored in address15, next one at 16, and so on until address30.
+        ```
+
   * **Timescale tasks**
     * **$printtimescale** - displays the time unit and time precision for the specified module.
       * The $printtimescale task with no arguments specified prints the time unit and time precision for the module that contains this task call. If a hierarchical path name to a module is specified as its argument, this system task prints the time unit and precision for the specified module.
     * $timeformat - specifies how the %t format specification must report time information.
       * The task is of the form:
+
+        ```text
         $timeformat( units_number , precision , suffix , numeric_field_width );
         $timeformat (-4, 3, "ps", 5) ;
         $display ("Current simulation time is %t", $time);
+        ```
+
       * where a units_number is:
+
+        ```text
         0 for 1 s
         -1 for 100ms
         -2 for 10ms
@@ -249,6 +283,8 @@
         -13 for 100 fs
         -14 for 10fs
         -15 for 1 fs
+        ```
+
   * **Simulation Control Tasks**
     * **$finish**; - makes the simulator exit and return control back to the operating system.
     * **$stop**; - causes the simulation to suspend. At this stage, interactive commands may be issued to the simulator.
@@ -281,12 +317,16 @@
         $nochange (negedge Clear, Preset, 0, 0);
       * will report a violation if Preset changes while Clear is low.
     * Each of the above system tasks may optionally have a last argument which is a notifier. A system task updates a  notifier, when there is a timing violation, by changing its value according to the following case statement.
+
+      ```verilog
       case ( notifier )
         'bx : notifier = 'b0;
         'b0 : notifier = 'bl;
         'bl : notifier = 'b0;
         'bz : notifier = 'bz;
       endcase
+      ```
+
     * A notifier can be used to provide information about the violation or propagate an x to the output that reported the violation. Here is an example of a notifier.
       reg NotifyDin;
       $setuphold (negedge Clock, Din, tSETUP, tHOLD, NotifyDin);
