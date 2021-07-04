@@ -238,7 +238,7 @@
         -2 for 10ms
         -3 for 1 ms
         -4 for 100us
-        -5 for lOus
+        -5 for l0us
         -6 for 1 us
         -7 for 100us
         -8 for 10ns
