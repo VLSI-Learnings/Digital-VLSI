@@ -10,7 +10,7 @@
 * Built-in primitive gates
   * The following built-in primitive gates are available in Verilog HDL.
     1. Multiple-input gates - These gates have one or more inputs and one output.
-       * and, nand, or,nor,xor,xnor
+       * and, nand, or, nor, xor, xnor
        * gate_type <instance_name> (out,in1,in2,in3)
        * output of these gates is never a Z since the input Z is treated as X.
     2. Multiple-output gates - These gates have only one input and one or more outputs.
@@ -21,10 +21,10 @@
        * buflf0, bufif1, notif0, notif1
        * tristate_gate [instance_name] (OutputA, InputB, ControlC);
        * Depending on the control input, the output can be driven to the high-impedance state, that is, to value z.
-       * For a bufifO gate, the output is z if control is 1, else data is transferred to output.
-       * For a bufifl gate, output is a z if control is 0.
-       * For a notifO gate, output is at z if control is at 1 else output is the invert of the input data value.
-       * For a notifl gate, output is at z if control is at 0.
+       * For a bufif0 gate, the output is z if control is 1, else data is transferred to output.
+       * For a bufif1 gate, output is a z if control is 0.
+       * For a notif0 gate, output is at z if control is at 1 else output is the invert of the input data value.
+       * For a notif1 gate, output is at z if control is at 0.
     4. Pull gates - These gates have only one output with no inputs.
        * pullup, pulldown
        * A pullup gate places a 1 on its output. A pulldown gate places a 0 on its output.
@@ -263,8 +263,8 @@
   * A module can be instantiated in another module, thus creating hierarchy. A module instantiation statement is of the form:
     module_name instance_name ( port_associations );
   * Port associations can be by position or by name; however, associations cannot be mixed.
-    port_expr // By position.
-    .PortName ( port_expr ) // By name.
+    * port_expr // By position.
+    * .PortName ( port_expr ) // By name.
     where port_expr can be any of the following:
     1. an identifier (a register or a net)
     2. a bit-select
