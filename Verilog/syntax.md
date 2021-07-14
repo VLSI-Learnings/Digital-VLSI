@@ -110,3 +110,11 @@ A design can be modeled in three different styles or in a mixed style. These sty
 
   * **Test Bench**
     * The stimulus (i.e.. the logic values of the inputs to a circuit) that tests the functionality of the design is called a Test bench
+
+* **Desgin Abstraction Layers**
+  * System level
+  * RTL level
+  * Gate level
+* Design styles
+  * Top - down
+  * Down - top 
