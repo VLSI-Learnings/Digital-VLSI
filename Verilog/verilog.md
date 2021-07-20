@@ -1,4 +1,6 @@
-# Introduction
+# Verilog
+
+## Introduction
 
 **What is HDL?**
 
@@ -35,7 +37,7 @@
 * **Design Functionality**
   * The behavioral requirements for the logic ciruit.
 
-# Data types
+## Data types
 
 **Vaule Set:**
 
@@ -199,7 +201,7 @@
     * using a defparam statement
     * or by specifying the parameter value in the module instantiation statement.
 
-# Syntax
+## Syntax
 
 **Module:**
 
@@ -320,7 +322,7 @@ A design can be modeled in three different styles or in a mixed style. These sty
   * Top - down
   * Down - top 
 
-# Expression and Operators
+## Expression and Operators
 
 * Expressions
   * An expression is formed using operands and operators. An expression can be used wherever a value is expected.
@@ -461,14 +463,14 @@ A design can be modeled in three different styles or in a mixed style. These sty
     2. parameter name
   * A **scalar expression** is an expression that evaluates to a 1-bit result. If a scalar result is expected but the expression produces a vector result, the least significant bit of the vector is used(the rightmost bit).
 
-# Modelling
+## Modelling
 
 * [Gate level modelling](/Verilog/modelling.md#gate-level-modelling)
 * [Dataflow Modelling](/Verilog/modelling.md#dataflow-modelling)
 * [Behavioral Modelling](/Verilog/modelling.md#behavioral-modelling)
 * [Structural Modelling](/Verilog/modelling.md#structural-modelling)
 
-## Gate level modelling
+### Gate level modelling
 
 * Built-in primitive gates
   * The following built-in primitive gates are available in Verilog HDL.
@@ -537,7 +539,7 @@ A design can be modeled in three different styles or in a mixed style. These sty
   * When repetitive instances are requied a range specification can optionally be specified in a gate instantiation.
   * gate_type [ delay ] instance_name [ leftbound : rightbound ] ( list __of_ terminal_names );
 
-## Dataflow Modelling
+### Dataflow Modelling
 
 * Continous Assignment
   * A continuous assignment assigns a value to a net.
@@ -583,7 +585,7 @@ A design can be modeled in three different styles or in a mixed style. These sty
     wire #2 A = B-C
     ```
 
-## Behavioral Modelling
+### Behavioral Modelling
 
 * Procedural Constructs
   * The primary mechanisms for modeling the behavior of a design are the following two statements.
@@ -714,7 +716,7 @@ A design can be modeled in three different styles or in a mixed style. These sty
   * The target of a procedural continuous assignment cannot be a part-select or a bit-select of a register.
   * Both the assignments can be used in the same procedural continuous blocks
 
-## Structural Modelling
+### Structural Modelling
 
 * Structural modeling is described using:
   * Gate instantiation
@@ -746,12 +748,12 @@ A design can be modeled in three different styles or in a mixed style. These sty
   * The hierarchical path names of the parameters in a lower level module can be explicitly set by using such a statement.
 * **External ports**
 
-# Task & Functions & User Defined Primitives
+## Task & Functions & User Defined Primitives
 
 * [UDP](/Verilog/other_topics.md#udp)
 * [Task & Functions](/Verilog/other_topics.md#task-&-functions)
 
-## UDP
+### UDP
 
 * A UDP is defined using a UDP declaration which has the following syntax.
   primitive UDP_name ( OutputName , List_of_inputs );
@@ -858,7 +860,7 @@ A design can be modeled in three different styles or in a mixed style. These sty
     |p|any of (01), (Ox), (xl)|
     |n|any of (10), (lx),(x0)|
 
-## Task & Functions
+### Task & Functions
 
 * **Identifiers:**
   * An identifier in Verilog HDL is any sequence of letters,digits,the $ character, and the _ (underscore) character, with the restriction that the first character must be a letter or an underscore.
