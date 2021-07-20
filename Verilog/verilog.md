@@ -320,7 +320,7 @@ A design can be modeled in three different styles or in a mixed style. These sty
   * Gate level
 * Design styles
   * Top - down
-  * Down - top 
+  * Down - top
 
 ## Expression and Operators
 
