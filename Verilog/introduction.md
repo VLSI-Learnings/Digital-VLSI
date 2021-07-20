@@ -31,3 +31,6 @@
 7. Explicit language constructs are provided for specifying pin-to-pin delays, path delays and timing checks of a design.
 8. The capabilities of the Verilog HDL language can be further extended by using the programming language interface (PLI) mechanism.
 **PLI is a collection of routines that allow foreign functions to access information within a Verilog module and allows for designer interaction with the simulator.**
+
+* **Design Functionality**
+  * The behavioral requirements for the logic ciruit.
