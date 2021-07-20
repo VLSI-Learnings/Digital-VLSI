@@ -107,6 +107,3 @@ A design can be modeled in three different styles or in a mixed style. These sty
 * **Simulating a Design**
 
   * Verilog HDL provides capabilities not only to escribe a design but also to model stimulus, control, storing responses and verification, all using the same language. Stimulus and control can be generated using initial statements.
-
-  * **Test Bench**
-    * The stimulus (i.e.. the logic values of the inputs to a circuit) that tests the functionality of the design is called a Test bench

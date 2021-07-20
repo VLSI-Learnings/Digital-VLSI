@@ -1,0 +1,7 @@
+{
+    "verilog.languageServer": "svls",
+    "verilog.linting.iverilog.runAtFileLocation": true,
+    "verilog.linting.linter": "iverilog",
+    "verilog.linting.modelsim.runAtFileLocation": true,
+    "verilog.linting.verilator.useWSL": true
+}
