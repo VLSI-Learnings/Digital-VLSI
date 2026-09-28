@@ -1,6 +1,6 @@
 # Introduction
 
-## About logic gates, its properties and minimization
+## About logic gates, their properties, and minimization
 
 * [Chapter 1](/Digital%20Electronics/Topics/introduction.md#chapter-1) - Basics
 * [Chapter 2](/Digital%20Electronics/Topics/introduction.md#chapter-2) - Boolean Algebra and logic gates
@@ -9,25 +9,25 @@
 ### Chapter 1
 
 * Definitions
-  * **Signal** - Information that represents the variation of physical quantity with respect to a parameter.
-  * **Analog Signal** - The dependent parameter that can any value defined within the limits as a function of the independent parameters.
+  * **Signal** - Information that represents the variation of a physical quantity with respect to a parameter.
+  * **Analog Signal** - The dependent parameter can take any value within the limits as a function of the independent parameters.
   * **Discrete Signal** - The dependent parameter is defined for particular values of the independent parameter.
-  * **Digital Signal** - The signal which is discrete in both dependent parameter and independent parameter.
-  * **Transducer** - The device which converts non electrical signal to electric signal.
-  * **Digital System** - The system the manipulates the discrete elements of information represented in binary form.
+  * **Digital Signal** - The signal that is discrete in both the dependent parameter and the independent parameter.
+  * **Transducer** - The device that converts a non-electrical signal to an electrical signal.
+  * **Digital System** - The system that manipulates the discrete elements of information represented in binary form.
 * Y's
   * Noise immunity
-    * Because of the levels, eventhough when the noise is added cancelled due to the levels.
+    * Because of the levels, even though noise is added, it is cancelled due to the levels.
   * Less use of bandwidth.
-  * Efficiency of long distance transmission.
+  * Efficiency of long-distance transmission.
 * Binary digit 0 or 1 is **BIT**
 
 ### Number System
 
 "The set of values used to represent a quantity"
 
-* **Base** - The no.of distinct in the particular number system.
-* Pure Binary System - Non negative number representation.
+* **Base** - The no of distinct digits in the particular number system.
+* Pure Binary System - Non-negative number representation.
 
   |Decimal|Binary|Octal|Hexadecimal|
   |:--:|:--:|:--:|:--:|
@@ -55,7 +55,7 @@
 * **Number system conversions**
 * **Arthimetic Operations**
   * Addition
-  * Subraction
+  * Subtraction
   * Multiplication
   * Division
 * **Complement**
@@ -63,7 +63,7 @@
   * Simplifying operations leads to simpler and less expensive circuits to implement the operations.
   * There are two types of complements for each base-r system:
     * Radix complement - r's complement
-      * **r's complement** = (r^n-N), n is no.of digits in N.
+      * **r's complement** = (r^n-N), where n is no of digits in N.
     * Diminished radix complement - (r - 1 )'s complement.
       * **(r-1)'s complement** = (r^n-N-1)
         |r's complement = (r-1)'s complement + 1|
@@ -82,19 +82,19 @@
 * **Binary subtraction in complements**
   * 1's Complement
       s=A-B
-    * Final carry in s is 1 then result = s+1
+    * If the final carry in s is 1, then result = s+1
     * Final carry in s is 0 then result = 1's complement of s.
-  This end around carry is an disadvantage so we use 2's complement.
+  This end around carry is a disadvantage, so we use 2's complement.
   * 2's complement
      s=A-B
     * final carry = 1 then result=s
     * final carry = 0 then result=2's complement of s
 * **Codes**
-  * Group of symbols mainly numbers or letters.
+  * Group of symbols, mainly numbers or letters.
     * Weighted code
       * BCD, 8421, 2421
     * Unweighted code
-      * excess 3, gray code
+      * excess 3, Gray code
     * Reflective code
       * 2421
     * Sequential code
@@ -106,10 +106,10 @@
 * **BCD**
   * Packed BCD
     * Representation of decimal >9 in BCD
-  * BCD is less eficient than binary since BCD requires more no.of bits
-  * But the convertion are easy from decimal to BCD
+  * BCD is less efficient than binary since BCD requires more no.of bits
+  * But the conversion is easy from decimal to BCD
   * **BCD Addition**
-    * sum>=9 then add 6 to it.
+    * If sum >= 9, then add 6 to it.
 * **Excess 3**
   * BCD + 3
 * **Gray code**
@@ -118,16 +118,16 @@
 * **ASCII CODE**
   * **Control characters** are used for routing data and arranging the printed text into a prescribed format. There are three types of control characters:
     * Formal effectors
-      * Characters that control the layout of printing. They include the familiar word processor and type writer controls such as backspace(BS), horizontal tabulation(HT), and carriage return (CR).
+      * Characters that control the layout of printing. They include the familiar word processor and typewriter controls such as backspace(BS), horizontal tabulation(HT), and carriage return (CR).
     * Information separators
-      * Used to the data into divisions such as paragraphs and pages. They include characters such record separator(RS ) and file separator (FS ).
+      * Used to the data into divisions such as paragraphs and pages. They include characters such as record separator(RS ) and file separator (FS ).
     * Communication control characters
-      * are useful during the transmission of text between remote terminals.
-      * Ex: STX(start of text) and ETX (end of text) which are used to frame a textmessage transmitted through telephone wires.
+      * Are useful during the transmission of text between remote terminals.
+      * Ex: STX(start of text) and ETX (end of text), which are used to frame a text message transmitted through telephone wires.
     * Printable characters
-    * Non Printable characters
-* **Error Detecting code**
-  * Parity bit - The extra bit included in the bit stream.(This can detect only when odd no.of bits are changed)
+    * Non-printable characters
+* **Error-detecting code**
+  * Parity bit - The extra bit included in the bit stream. (This can detect only when an odd no.of bits are changed)
     * Even parity - The bit should such that overall 1's be even.
     * Odd parity - The bit should such that overall 1's be odd.
 * The circuit that generates the parity bit in the transmitter is called a **Parity Generator**.
@@ -139,7 +139,7 @@ receiver is called a **Parity Checker**.
 
 #### Boolean Algebra
 
-* The common postulates that formulates the algebric structures.
+* The common postulates that formulate the algebraic structures.
   * Closure
   * Associative
   * Commutative
@@ -151,13 +151,13 @@ receiver is called a **Parity Checker**.
     |(x + y)' = x' . y'|(x.y)' = x' + y' |
     |--|--|
 * Huntington postulates:
-  1. The structure is closed with respect to the operator '**+**' and '**.**'.
+  1. The structure is closed with respect to the operators '**+**' and '**.**'.
   2. (a) The element 0 is an identity element with respect to '+' that is
 
       |x + 0 = 0 + x = x|
       |--|
 
-     (b) The element I is an identity element w ith respect to '.' that is
+     (b) The element I is an identity element with respect to '.' that is
 
       |x · 1 = 1 · x = x|
       |--|
@@ -190,43 +190,43 @@ receiver is called a **Parity Checker**.
       |x != y|
       |--|
 * ***Literal*** - The single variable in the term of the boolean expression.
-* ***Binary logic*** - The variables with logic operations that has two discrete values.
-* ***Truth table*** - The represents the information of output for all the combinations of inputs.
-* ***Logic gate*** - A physical device that performs logical on one or more binary inputs and produces a single output.
+* ***Binary logic*** - The variables with logic operations that have two discrete values.
+* ***Truth table*** - Represents the information of output for all the combinations of inputs.
+* ***Logic gate*** - A physical device that performs logical operations on one or more binary inputs and produces a single output.
   * **Basic gates: (AND, OR, NOT)**
     * Any digital circuit can be implemented using these gates.
   * **Universal gates:(NAND, NOR)**
     * Any logic can be implemented using only these gates.
   * **Arthimetic gates:(XOR, XNOR)**
-    * Used in arthimetic operations
+    * Used in arithmetic operations
 * **Duality**
-  * The expressions that are deduciable from the postulates of the boolean algebra are remain valid if the operands and identity elements are interchanged.
-    * **Self dual** - The same expression is obtained when the operands are interchaged two times.
+  * The expressions that are deducible from the postulates of the Boolean algebra remain valid if the operands and identity elements are interchanged.
+    * **Self dual** - The same expression is obtained when the operands are interchanged twice.
 * **Complement** - Negation of the function.
-  * This can be obtained by taking negation for the whole function
+  * This can be obtained by taking the negation of the whole function
   * First take the dual form and complement each literal
   * ex:
     f=x'y'z
     dual form f=x'+y'+z
     f'=x+y+z'
-* **Operator precedence** - The operator precedence for evaluating Boolean expressions is (1) parenthesis, (2) NOT, (3) AND and (4) OR.
-* **Minterm**(Standard product) - The term of literals in their normal or complemented form and their product is 1.
-* **Maxterm**(Standard sum) - The term of literals in their normal or complemented form and their sum is 0.
+* **Operator precedence** - The operator precedence for evaluating Boolean expressions is (1) parentheses, (2) NOT, (3) AND, and (4) OR.
+* **Minterm**(Standard product) - The term of literals in their normal or complemented form, and their product is 1.
+* **Maxterm**(Standard sum) - The term of literals in their normal or complemented form, and their sum is 0.
 * **Canonical form** - Boolean functions expressed as a sum of minterms or product of maxterms.
 * **Standard form**
   * **SOP**(Sum of Products) - Boolean function expressed as ORing of product terms with single or multiple literals.
-  * **POS**(Products of Sum) - Boolean function expressed as ANDing of sum terms with single or multiple literals.
+  * **POS**(Product of Sums) - Boolean function expressed as ANDing of sum terms with single or multiple literals.
 * **Factors** considered for building of logic gates
   1. Feasibility and economy of producing the gate with physical components.
   2. The possibility of extending the gate to two or more than two inputs.
   3. The basic properties of the binary operator, such as commutativity and associativity, etc
   4. The ability of the gate to implement Boolean functions alone or in conjunction with other gates.
 * **Positive logic**
-  * "1" level vaule of the variable > "0" level value
+  * "1" level value of the variable > "0" level value
 * **Negative logic**
   * "1" level value of the variable < "0" level value
 * Levels of Integration
-  * Digital circuits are often categorized according to the complexity of their circuits as measured by the number of logic gates in a single package .
+  * Digital circuits are often categorized according to the complexity of their circuits as measured by the number of logic gates in a single package.
   * Small-scale integration (SSI)
   * Medium-scale integration (MSI)
   * Large-scale integration (LSI)
@@ -235,42 +235,42 @@ receiver is called a **Parity Checker**.
   * Each logic family has its own basic electronic circuit upon which more complex digital circuits and components are developed.
   * TIL - transistor-transistor logic
   * ECL - emitter-coupled logic
-    * systems requiring high speed operation
+    * Systems requiring high-speed operation
   * MOS - metal-oxide semiconductor
-    * circuit that needs high component density
+    * Circuits that need high component density
   * CMOS - complementary metal-oxide semiconductor.
-    * systems that need low power comsumption
+    * Systems that need low power consumption
 * **Fan-out** - The no.of standard loads that the output of the gate can drive without impairing its operation.
 * **Fan-in** - The no.of inputs available in a gate.
-* **Power disspation** - The power consumed by the gate available from the power supply.
+* **Power dissipation** - The power consumed by the gate from the power supply.
 * **Propagation Delay** - The average transition delay for the signal to propagate from input to output.
-* **Noise Margin** - The maximum external noise voltage added to the signal that does not cause an undesirable state to the output.
+* **Noise Margin** - The maximum external noise voltage added to the signal that does not cause an undesirable state at the output.
 
 ### Chapter 3
 
 * **Gate level minimization**
-  * refers to the design task of finding an optimal gate-level implementation of the Boolean functions describing a digital circuit.
+  * Refers to the design task of finding an optimal gate-level implementation of the Boolean functions describing a digital circuit.
 * Methods
-  * Boolean algebric manipulation.
+  * Boolean algebraic manipulation.
   * Karnaugh map(K-map)
   * Quine McCluskey minimization technique(tabular method)
 * **Karnaugh map(K-map)**
-  * Follows rule of adjacency.
-  * In choosing adjacent squares in a map, we must en sure that
+  * Follows the rule of adjacency.
+  * In choosing adjacent squares in a map, we must ensure that
     1. all the minterms of the function are covered when we combine the squares
     2. the number of terms in the expression is minimized
-    3. there are no redundant terms (i.e .. minrerms alrea dy cove red by other terms).
+    3. there are no redundant terms (i.e., minterms already covered by other terms).
   * Boolean function can be written in both ways SOP and POS.
     * For SOP we consider minterms and for POS consider maxterms.
 * **Don't care conditions**
 * **Implicants**
-  * The terms obtained by grouping the 1's from the true table.
+  * The terms obtained by grouping the 1's from the truth table.
 * **Prime Implicats**
-  * This the largest group of adjacent 1's possible in the map.
+  * This is the largest group of adjacent 1's possible in the map.
 * **Essential Prime Implicants**
-  * If atleast one minterm is covered in only one prime implicant.
-* **NAND n NOR**
-  * Most of the digital circuits are made of NAND n NOR because these are easier to fabricate with electronic components.
+  * If at least one minterm is covered in only one prime implicant.
+* **NAND and NOR**
+  * Most of the digital circuits are made of NAND and NOR because these are easier to fabricate with electronic components.
 * **AND-OR-INVERT function**
 
   |F = (AB)'· · (CD)' = (AB + CD)' = (A' + B')(C' + D')|
@@ -279,7 +279,7 @@ receiver is called a **Parity Checker**.
   |F = (A + B)' + (C + D )' = [(A + B)(C + D)]'|
   |--|
 * **Degenerate forms**
-  * In two level implementation, the combinations of the same gates like NAND-NAND AND-AND OR-OR etc.
-  * Since these are degenerate to single operation.
+  * In two-level implementation, the combinations of the same gates like NAND-NAND AND-AND OR-OR etc.
+  * Since these are degenerate to a single operation.
 * **Non Degenerate forms**
-  * In two level implementation, the combinations of the different gates like NAND-AND AND-NAND OR-NOR etc.
+  * In two-level implementation, the combinations of different gates like NAND-AND, AND-NAND, OR-NOR etc.
