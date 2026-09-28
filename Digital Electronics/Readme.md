@@ -2,7 +2,7 @@
 
 ## All the topics of Digital Electronics are covered here
 
-* [Introduction](/Digital%20Electronics/introduction.md) - About logic gates, its properties, Boolean Algebra and minimization.
+* [Introduction](/Digital%20Electronics/introduction.md) - About logic gates, their properties, Boolean algebra, and minimization.
 * [Combinational Logic](/Digital%20Electronics/combinational.md) - About combinational circuits
 * [Sequential Logic](/Digital%20Electronics/sequential.md) - About synchronous and asynchronous sequential circuits
 * [Registers & Counters](/Digital%20Electronics/register.md)
