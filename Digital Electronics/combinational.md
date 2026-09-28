@@ -1,19 +1,19 @@
 # Combinational Circuits
 
 * **Combinational circuit**
-  * A combinational circuit consists of logic gates whose outputs at present time are determined from only the present combination of inputs.
+  * A combinational circuit consists of logic gates whose outputs at present are determined only by the present combination of inputs.
 * **Design Procedure**
   * The design of combinational circuits starts from the specification of the design objective and culminates in a logic circuit diagram or a set of Boolean functions from which the logic diagram can be obtained. The procedure involves the following steps:
     1. From the specifications of the circuit. determine the required number of inputs and outputs and assign a symbol to each.
     2. Derive the truth table that defines the required relationship between inputs and outputs
-    3. Obtain the simplified Boolean functions foreach output as a function of the input variables.
+    3. Obtain the simplified Boolean functions for each output as a function of the input variables.
     4. Draw the logic diagram and verify the correctness of the design (manually or by simulation).
 * **Adders**
   * **Half adder** - A combinational circuit that performs the addition of two bits.
   * **Full adder** - One that performs the addition of three bits (two significant bits and a previous carry)
   * **Ripple Carry Adder** - n-bit full adder
   * **Carry Look Ahead adder**
-    * To reduce the delay in carry propagation we use two funtions known as
+    * To reduce the delay in carry propagation, we use two functions known as
     * **Carry generate (G)** - and it produces a carry of 1 when both A(i) and B(i), are 1 regardless of the input carry.
 
       |G(i)=A(i)B(i)|
@@ -32,7 +32,7 @@
       |Diff=A xor B xor Bin|Borrow=A'B+Bin(A xnor B)|
       |--|--|
   * **Overflow**
-    * The extra bit that occured during the addition of the two data.
+    * The extra bit that occurs during the addition of the two data.
     * This occurs only when the addition of two numbers if they are both positive or negative.
 * **BCD Adder**
 * **Binary Multiplication**
@@ -54,9 +54,9 @@
   * A multiplexer is a combinational circuit that selects binary information from one of many input lines and directs it to a single output line.
   * The selection of a particular input line is controlled by a set of selection lines.
 * **Three state gates**(Tristate buffer)
-  * Digital circuit that exhibit three states.
+  * Digital circuit that exhibits three states.
   * Two states are equivalent to logic 1 and 0.
-  * Third states is high impedance staes in which
+  * The third state is a high-impedance state in which
     * the logic behaves like an open circuit.
-    * the circuithas no logic significance.
-    * the circuitconnected to the output of the three state gate is not affected by the inputs of the gate.
+    * The circuit has no logic significance.
+    * The circuit connected to the output of the three state gate is not affected by the inputs of the gate.
